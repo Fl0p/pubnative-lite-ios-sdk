@@ -37,6 +37,5 @@ typedef void (^UserDataManagerCompletionBlock)(BOOL);
 - (BOOL)shouldAskConsent;
 - (void)grantConsent;
 - (void)denyConsent;
-- (void)revokeConsent;
 
 @end
