@@ -26,6 +26,7 @@
 
 @property (nonatomic, strong) NSString *deviceID;
 @property (nonatomic, strong) NSString *deviceIDType;
+@property (nonatomic, assign) BOOL consent;
 
 @end
 
@@ -38,11 +39,13 @@
 }
 - (instancetype)initWithDeviceID:(NSString *)deviceID
                 withDeviceIDType:(NSString *)deviceIDType
+                     withConsent:(BOOL)consent
 {
     self = [super init];
     if (self) {
         self.deviceID = deviceID;
         self.deviceIDType = deviceIDType;
+        self.consent = consent;
     }
     return self;
 }
@@ -55,6 +58,9 @@
     }
     if (self.deviceIDType) {
         [dictionary setObject:self.deviceIDType forKey:@"did_type"];
+    }
+    if (self.consent) {
+        [dictionary setObject:[NSNumber numberWithBool:self.consent] forKey:@"consent"];
     }
     
     NSError * error = nil;
