@@ -139,9 +139,9 @@ NSInteger const kPNLiteConsentStateDenied = 0;
 - (void)checkConsentGiven
 {
     PNLiteCheckConsentRequest * request = [[PNLiteCheckConsentRequest alloc] init];
-    [request checkConsentRequestWithDelegate:self withAppToken:[PNLiteSettings sharedInstance].appToken
-                                withDeviceID:[PNLiteSettings sharedInstance].advertisingId
-                            withDeviceIDType:kPNLiteDeviceIDType];
+    [request checkConsentRequestWithDelegate:self
+                                withAppToken:[PNLiteSettings sharedInstance].appToken
+                                withDeviceID:[PNLiteSettings sharedInstance].advertisingId];
 }
 
 - (BOOL)GDPRApplies
